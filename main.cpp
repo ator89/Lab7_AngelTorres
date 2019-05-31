@@ -6,6 +6,7 @@
 #include "Defensivo.h"
 #include "Curacion.h"
 #include "Invocacion.h"
+#include "FireBender.h"
 
 #include <iostream>
 using std::cout;
