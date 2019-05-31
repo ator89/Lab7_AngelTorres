@@ -9,7 +9,7 @@ NonBender::NonBender(){
 	nombre = "";
 	sexo = "";
 	edad = 0;
-	tipo = 0;
+	tipo = 5;
 }
 
 NonBender::NonBender(string _trabajo,int _fuerza,int _vel,string _nacion,string _nombre, string _sexo,int _edad,int _tipo):Persona(_nacion, _nombre, _sexo, _edad,_tipo){
@@ -20,7 +20,7 @@ NonBender::NonBender(string _trabajo,int _fuerza,int _vel,string _nacion,string 
 	nombre = "";
 	sexo = "";
 	edad = 0;
-	tipo = 0;
+	tipo = 5;
 }
 //Destructor
 NonBender::~NonBender(){}

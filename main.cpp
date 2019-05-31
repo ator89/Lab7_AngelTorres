@@ -1,6 +1,8 @@
 #include "Persona.h"
 #include "AirBender.h"
 #include "NonBender.h"
+#include "PoderEspecial.h"
+#include "Ofensivo.h"
 
 #include <iostream>
 using std::cout;
