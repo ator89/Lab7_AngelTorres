@@ -9,7 +9,7 @@ class Defensivo:public PoderEspecial{
 	public:
 		//Constructores y destructor
 		Defensivo();
-		Defensivo(int,int, string,int,int);
+		Defensivo(int,int,string,int,int);
 		~Defensivo();
 
 		//Setters

@@ -4,11 +4,16 @@
 #include "PoderEspecial.h"
 #include "Ofensivo.h"
 #include "Defensivo.h"
+#include "Curacion.h"
+#include "Invocacion.h"
 
 #include <iostream>
 using std::cout;
 using std::cin;
 using std::endl;
+
+#include <vector>
+using std::vector;
 
 void menu();
 
@@ -17,6 +22,7 @@ int main(){
 	//variables menú principal
 	bool menuActivo = true;
 	int opcionMenu = -1;
+	vector<Persona*> lista;
 
 	while(menuActivo){
 
@@ -91,6 +97,8 @@ int main(){
 						//(int cPelo, string cFlecha, string _nacion, string _nombre, string _sexo, int _tipo)
 						
 						Persona* p = new AirBender(cantidadPelo,colorFlecha,poder,nacion,nombre,sexo,edad,1);
+						lista.push_back(p);
+
 						cout << p->toString() <<" agregado con éxito\n";
 						
 					}
@@ -122,6 +130,11 @@ int main(){
 		menuActivo = false;
 	}//end while menu activo
 
+	//limpiar vector
+	for(int i=0; i<lista.size();i++){
+		//delete lista[i];
+	}
+	//lista.clear();
 	return 0;
 }
 

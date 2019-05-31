@@ -22,7 +22,9 @@ AirBender::AirBender(int cPelo, string cFlecha, PoderEspecial* _po, string _naci
 	poder = _po;
 }
 
-AirBender::~AirBender(){}
+AirBender::~AirBender(){
+	
+}
 
 //Setters
 void AirBender::setCantidadPelo(int cPelo){
