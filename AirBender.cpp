@@ -8,9 +8,10 @@ AirBender::AirBender(){
 	sexo = "";
 	edad = 0;
 	tipo = 0;
+	poder = 0;
 }
 
-AirBender::AirBender(int cPelo, string cFlecha, string _nacion, string _nombre, string _sexo, int _edad, int _tipo):Persona(_nacion, _nombre, _sexo, _edad,_tipo){
+AirBender::AirBender(int cPelo, string cFlecha, PoderEspecial* _po, string _nacion, string _nombre, string _sexo, int _edad, int _tipo):Persona(_nacion, _nombre, _sexo, _edad,_tipo){
 	cantidadPelo = cPelo;
 	colorFlecha = cFlecha;
 	nacion = _nacion;
@@ -18,6 +19,7 @@ AirBender::AirBender(int cPelo, string cFlecha, string _nacion, string _nombre, 
 	sexo = _sexo;
 	edad = _edad;
 	tipo = 1;
+	poder = _po;
 }
 
 AirBender::~AirBender(){}
@@ -30,6 +32,10 @@ void AirBender::setColorFlecha(string cFlecha){
 	colorFlecha = cFlecha;
 }
 
+void AirBender::setPoderEspecial(PoderEspecial* _po){
+	poder = _po;
+}
+
 //Getters
 int AirBender::getCantidadPelo(){
 	return cantidadPelo;
@@ -37,6 +43,10 @@ int AirBender::getCantidadPelo(){
 
 string AirBender::getColorFlecha(){
 	return colorFlecha;
+}
+
+PoderEspecial* AirBender::getPoderEspecial(){
+	return poder;
 }
 
 string AirBender::toString(){

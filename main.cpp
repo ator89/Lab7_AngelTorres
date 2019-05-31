@@ -3,6 +3,7 @@
 #include "NonBender.h"
 #include "PoderEspecial.h"
 #include "Ofensivo.h"
+#include "Defensivo.h"
 
 #include <iostream>
 using std::cout;
@@ -28,9 +29,20 @@ int main(){
 					cin.clear();
 					cout << "\n\n\tAgregar Personas\n";
 
+					//variables poder especial
+					string nombrePoder;
+					int nivelPoder;
+
+					//variables ofensivo
+					int oRango;
+					int ofuerza;
+
+
 					//variables airbender
 					int cantidadPelo;
 					string colorFlecha;
+					int tipoPoder;
+
 					
 					//variables nonbender
 					string trabajo;
@@ -58,11 +70,29 @@ int main(){
 					if(tipo == 1){//Agregar air bender
 						cout << "Ingrese la cantidad de pelo: ";
 						cin >> cantidadPelo;
-						cout << "Ingrese la edad: ";
+						cout << "Color de Flecha: ";
 						cin >> colorFlecha;
+						cout << "nombre poder: ";
+						cin >> nombrePoder;
+						cout << "nivel poder: ";
+						cin >> nivelPoder;
+
+						cout << "Ingrese el tipo poder \n(1:Ofensivo, 2:Defensivo, 3:Curación, 4:Invocar Animal): ";
+						cin >> tipoPoder;
+
+						if(tipoPoder ==1){
+							cout << "Ingrese el rango: ";
+							cin >> oRango;
+							cout << "Ingrese la fuerza: ";
+							cin >> ofuerza;
+						}
+						//(string _nombre, int _nivel, int _tipo)
+						PoderEspecial* poder = new Ofensivo(oRango,ofuerza,nombrePoder,nivelPoder,1);
 						//(int cPelo, string cFlecha, string _nacion, string _nombre, string _sexo, int _tipo)
-						Persona* p = new AirBender(cantidadPelo,colorFlecha,nacion,nombre,sexo,edad,1);
+						
+						Persona* p = new AirBender(cantidadPelo,colorFlecha,poder,nacion,nombre,sexo,edad,1);
 						cout << p->toString() <<" agregado con éxito\n";
+						
 					}
 
 					if(tipo == 5){//Agregar non bender
@@ -73,7 +103,7 @@ int main(){
 						cout << "Nivel de fuerza: ";
 						cin >> fuerza;
 						//(int cPelo, string cFlecha, string _nacion, string _nombre, string _sexo, int _tipo)
-						Persona* p = new NonBender(trabajo,fuerza,velocidad,nacion,nombre,sexo,edad,1);
+						Persona* p = new NonBender(trabajo,fuerza,velocidad,nacion,nombre,sexo,edad,5);
 						cout << p->toString() <<" agregado con éxito\n";
 					}
 				}
