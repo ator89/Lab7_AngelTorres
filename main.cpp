@@ -7,6 +7,7 @@
 #include "Curacion.h"
 #include "Invocacion.h"
 #include "FireBender.h"
+#include "WaterBender.h"
 
 #include <iostream>
 using std::cout;
