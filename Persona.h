@@ -11,7 +11,6 @@ protected:
 	string sexo;
 	int edad;
 	int tipo;
-	int poder;
 public:
 	//Constructores y destructor
 	Persona();
@@ -22,8 +21,8 @@ public:
 	void setNacion(string);
 	void setNombre(string);
 	void setSexo(string);
+	void setEdad(int);
 	void setTipo(int);
-	void setPoder(int);
 
 	//Getters
 	string getNacion();
@@ -31,7 +30,6 @@ public:
 	string getSexo();
 	int getEdad();
 	int getTipo();
-	int getPoder();
 
 	virtual string toString() = 0;
 

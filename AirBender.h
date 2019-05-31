@@ -7,7 +7,12 @@ class AirBender:public Persona{
 		int cantidadPelo;
 		string colorFlecha;
 	public:
+		//Constructores
 		AirBender();
+		//AirBender(int,string);
+		//Persona(string,string,string,int);
+		AirBender(int, string, string,string,string,int,int);
+		//Destructor
 		~AirBender();
 
 		//Setters
@@ -17,21 +22,6 @@ class AirBender:public Persona{
 		//Getters
 		int getCantidadPelo();
 		string getColorFlecha();
-
-		//Setters
-		void setNacion(string);
-		void setNombre(string);
-		void setSexo(string);
-		void setTipo(int);
-		void setPoder(int);
-
-		//Getters
-		string getNacion();
-		string getNombre();
-		string getSexo();
-		int getEdad();
-		int getTipo();
-		int getPoder();
 
 		virtual string toString();
 };

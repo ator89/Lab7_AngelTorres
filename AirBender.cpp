@@ -1,25 +1,44 @@
-AirBender();
-~AirBender();
+#include "AirBender.h"
+
+AirBender::AirBender(){
+	cantidadPelo = 0;
+	colorFlecha = "";
+	nacion ="";
+	nombre = "";
+	sexo = "";
+	edad = 0;
+	tipo = 0;
+}
+
+AirBender::AirBender(int cPelo, string cFlecha, string _nacion, string _nombre, string _sexo, int _edad, int _tipo):Persona(_nacion, _nombre, _sexo, _edad,_tipo){
+	cantidadPelo = cPelo;
+	colorFlecha = cFlecha;
+	nacion = _nacion;
+	nombre = _nombre;
+	sexo = _sexo;
+	edad = _edad;
+	tipo = 1;
+}
+
+AirBender::~AirBender(){}
 
 //Setters
-void setCantidadPelo(int);
-void setColorFlecha(string);
+void AirBender::setCantidadPelo(int cPelo){
+	cantidadPelo = cPelo;
+}
+void AirBender::setColorFlecha(string cFlecha){
+	colorFlecha = cFlecha;
+}
 
 //Getters
-int getCantidadPelo();
-string getColorFlecha();
+int AirBender::getCantidadPelo(){
+	return cantidadPelo;
+}
 
-//Setters
-virtual void setNacion(string);
-virtual void setNombre(string);
-virtual void setSexo(string);
-virtual void setTipo(int);
-virtual void setPoder(int);
+string AirBender::getColorFlecha(){
+	return colorFlecha;
+}
 
-//Getters
-virtual string getNacion();
-virtual string getNombre();
-virtual string getSexo();
-virtual int getEdad();
-virtual int getTipo();
-virtual int getPoder();
+string AirBender::toString(){
+	return "AirBender";
+}
