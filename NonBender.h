@@ -9,17 +9,20 @@ class NonBender:public Persona{
 		int velocidad;
 	public:
 		NonBender();
+		NonBender(string,int,int,string,string,string,int,int);
 		~NonBender();
 
 		//Setters
 		void setTrabajo(string);
-		void setFuerza(string);
-		void setVelocidad(string);
+		void setFuerza(int);
+		void setVelocidad(int);
 
 		//Getters
 		string getTrabajo();
 		int getFuerza();
-		int get velocidad();
+		int getVelocidad();
+
+		virtual string toString();
 };
 
 #endif

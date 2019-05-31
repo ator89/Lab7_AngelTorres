@@ -40,5 +40,5 @@ string AirBender::getColorFlecha(){
 }
 
 string AirBender::toString(){
-	return "AirBender";
+	return "Air Bender";
 }

@@ -9,8 +9,6 @@ class AirBender:public Persona{
 	public:
 		//Constructores
 		AirBender();
-		//AirBender(int,string);
-		//Persona(string,string,string,int);
 		AirBender(int, string, string,string,string,int,int);
 		//Destructor
 		~AirBender();

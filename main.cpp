@@ -1,5 +1,6 @@
 #include "Persona.h"
 #include "AirBender.h"
+#include "NonBender.h"
 
 #include <iostream>
 using std::cout;
@@ -25,8 +26,16 @@ int main(){
 					cin.clear();
 					cout << "\n\n\tAgregar Personas\n";
 
+					//variables airbender
 					int cantidadPelo;
 					string colorFlecha;
+					
+					//variables nonbender
+					string trabajo;
+					int fuerza;
+					int velocidad;
+
+					//variables persona
 					string nacion;
 					string nombre;
 					string sexo;
@@ -44,7 +53,7 @@ int main(){
 					cout << "Ingrese el tipo \n(1:Air Bender, 2:Fire Bender, 3:Water Bender, 4:Earth Bender, 5:Non Bender): ";
 					cin >> tipo;
 					
-					if(tipo == 1){
+					if(tipo == 1){//Agregar air bender
 						cout << "Ingrese la cantidad de pelo: ";
 						cin >> cantidadPelo;
 						cout << "Ingrese la edad: ";
@@ -52,9 +61,19 @@ int main(){
 						//(int cPelo, string cFlecha, string _nacion, string _nombre, string _sexo, int _tipo)
 						Persona* p = new AirBender(cantidadPelo,colorFlecha,nacion,nombre,sexo,edad,1);
 						cout << p->toString() <<" agregado con éxito\n";
-
 					}
 
+					if(tipo == 5){//Agregar non bender
+						cout << "En qué trabaja: ";
+						cin >> trabajo;
+						cout << "Velocidad: ";
+						cin >> velocidad;
+						cout << "Nivel de fuerza: ";
+						cin >> fuerza;
+						//(int cPelo, string cFlecha, string _nacion, string _nombre, string _sexo, int _tipo)
+						Persona* p = new NonBender(trabajo,fuerza,velocidad,nacion,nombre,sexo,edad,1);
+						cout << p->toString() <<" agregado con éxito\n";
+					}
 				}
 				break;
 				case 2://Listar
