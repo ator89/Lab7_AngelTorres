@@ -18,6 +18,8 @@ using std::endl;
 #include <vector>
 using std::vector;
 
+#include <typeid>
+
 void menu();
 
 int main(){
@@ -362,9 +364,17 @@ int main(){
 					
 				}//end case 1
 				break;
-				case 2://Listar
+				case 2:{//Listar
+
+
+					for(int i = 0; i < lista.size(); i++){
+						cout << lista.at(i)->toString() << endl;
+						if(typeid)
+					}
+				}
 				break;
 				case 3://Eliminar
+					cout << "Coming soon...\n";
 				break;
 				case 0://Salir
 				break;
