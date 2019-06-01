@@ -44,12 +44,30 @@ int main(){
 					//variables ofensivo
 					int oRango;
 					int ofuerza;
+					//variables defensivo
+					int resistencia;
+					int duracion;
+					//variables curacion
+					string curacion;
+					//variables invocacion
+					string nmascota;
+					string especie;
+					string habilidad;
+					string tipoMascota;
 
+
+					//variables fire bender
+					int cicatrices;
+					int victorias;
 
 					//variables airbender
 					int cantidadPelo;
 					string colorFlecha;
 					int tipoPoder;
+
+					//variables water bender
+					string tribu;
+					string arma;
 
 					
 					//variables nonbender
@@ -74,36 +92,6 @@ int main(){
 					cin >> edad;
 					cout << "Ingrese el tipo \n(1:Air Bender, 2:Fire Bender, 3:Water Bender, 4:Earth Bender, 5:Non Bender): ";
 					cin >> tipo;
-					
-					if(tipo == 1){//Agregar air bender
-						cout << "Ingrese la cantidad de pelo: ";
-						cin >> cantidadPelo;
-						cout << "Color de Flecha: ";
-						cin >> colorFlecha;
-						cout << "nombre poder: ";
-						cin >> nombrePoder;
-						cout << "nivel poder: ";
-						cin >> nivelPoder;
-
-						cout << "Ingrese el tipo poder \n(1:Ofensivo, 2:Defensivo, 3:Curación, 4:Invocar Animal): ";
-						cin >> tipoPoder;
-
-						if(tipoPoder ==1){
-							cout << "Ingrese el rango: ";
-							cin >> oRango;
-							cout << "Ingrese la fuerza: ";
-							cin >> ofuerza;
-						}
-						//(string _nombre, int _nivel, int _tipo)
-						PoderEspecial* poder = new Ofensivo(oRango,ofuerza,nombrePoder,nivelPoder,1);
-						//(int cPelo, string cFlecha, string _nacion, string _nombre, string _sexo, int _tipo)
-						
-						Persona* p = new AirBender(cantidadPelo,colorFlecha,poder,nacion,nombre,sexo,edad,1);
-						lista.push_back(p);
-
-						cout << p->toString() <<" agregado con éxito\n";
-						
-					}
 
 					if(tipo == 5){//Agregar non bender
 						cout << "En qué trabaja: ";
@@ -115,8 +103,197 @@ int main(){
 						//(int cPelo, string cFlecha, string _nacion, string _nombre, string _sexo, int _tipo)
 						Persona* p = new NonBender(trabajo,fuerza,velocidad,nacion,nombre,sexo,edad,5);
 						cout << p->toString() <<" agregado con éxito\n";
-					}
-				}
+					}else{
+
+						if(tipo == 1){//Agregar air bender
+							cout << "Ingrese la cantidad de pelo: ";
+							cin >> cantidadPelo;
+							cout << "Color de Flecha: ";
+							cin >> colorFlecha;
+
+							cout << "nombre poder: ";
+							cin >> nombrePoder;
+							cout << "nivel poder: ";
+							cin >> nivelPoder;
+
+							cout << "Ingrese el tipo poder \n(1:Ofensivo, 2:Defensivo, 3:Curación, 4:Invocar Animal): ";
+							cin >> tipoPoder;
+
+							if(tipoPoder ==1){
+								cout << "Ingrese el rango: ";
+								cin >> oRango;
+								cout << "Ingrese la fuerza: ";
+								cin >> ofuerza;
+								//(string _nombre, int _nivel, int _tipo)
+								PoderEspecial* poder = new Ofensivo(oRango,ofuerza,nombrePoder,nivelPoder,1);
+								Persona* p = new AirBender(cantidadPelo,colorFlecha,poder,nacion,nombre,sexo,edad,1);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+							if(tipoPoder == 2){
+								cout << "Resistencia: ";
+								cin >> resistencia;
+								cout << "duracion: ";
+								cin >> duracion;
+								PoderEspecial* poder = new Defensivo(resistencia,duracion,nombrePoder,nivelPoder,2);
+								Persona* p = new AirBender(cantidadPelo,colorFlecha,poder,nacion,nombre,sexo,edad,1);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+
+							if(tipoPoder == 3){
+								cout << "Tipo de curacion: ";
+								cin >> curacion;
+								PoderEspecial* poder = new Curacion(curacion,nombrePoder,nivelPoder,3);
+								Persona* p = new AirBender(cantidadPelo,colorFlecha,poder,nacion,nombre,sexo,edad,1);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+
+							if(tipoPoder == 4){
+								cout << "Nombre Mascota: ";
+								cin >> nmascota;
+								cout << "especie: ";
+								cin >> especie;
+								cout << "Habilidad: ";
+								cin >> habilidad;
+								cout << "Tipo Mascota: (guerra o doméstico)";
+								cin >> tipoMascota;
+								PoderEspecial* poder = new Invocacion(nmascota,especie,habilidad,tipoMascota,nombrePoder,nivelPoder,4);
+								Persona* p = new AirBender(cantidadPelo,colorFlecha,poder,nacion,nombre,sexo,edad,1);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+						}//end if agregar air bender
+
+
+						if(tipo == 2){//Agregar fire bender
+							cout << "Número de cicatrices: ";
+							cin >> cicatrices;
+							cout << "Número victorias: ";
+							cin >> victorias;
+
+
+							cout << "nombre poder: ";
+							cin >> nombrePoder;
+							cout << "nivel poder: ";
+							cin >> nivelPoder;
+
+							cout << "Ingrese el tipo poder \n(1:Ofensivo, 2:Defensivo, 3:Curación, 4:Invocar Animal): ";
+							cin >> tipoPoder;
+
+							if(tipoPoder ==1){
+								cout << "Ingrese el rango: ";
+								cin >> oRango;
+								cout << "Ingrese la fuerza: ";
+								cin >> ofuerza;
+								//(string _nombre, int _nivel, int _tipo)
+								PoderEspecial* poder = new Ofensivo(oRango,ofuerza,nombrePoder,nivelPoder,1);
+								Persona* p = new FireBender(cicatrices,victorias,poder,nacion,nombre,sexo,edad,2);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+							if(tipoPoder == 2){
+								cout << "Resistencia: ";
+								cin >> resistencia;
+								cout << "duracion: ";
+								cin >> duracion;
+								PoderEspecial* poder = new Defensivo(resistencia,duracion,nombrePoder,nivelPoder,2);
+								Persona* p = new FireBender(cicatrices,victorias,poder,nacion,nombre,sexo,edad,2);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+
+							if(tipoPoder == 3){
+								cout << "Tipo de curacion: ";
+								cin >> curacion;
+								PoderEspecial* poder = new Curacion(curacion,nombrePoder,nivelPoder,3);
+								Persona* p = new FireBender(cicatrices,victorias,poder,nacion,nombre,sexo,edad,2);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+
+							if(tipoPoder == 4){
+								cout << "Nombre Mascota: ";
+								cin >> nmascota;
+								cout << "especie: ";
+								cin >> especie;
+								cout << "Habilidad: ";
+								cin >> habilidad;
+								cout << "Tipo Mascota: (guerra o doméstico)";
+								cin >> tipoMascota;
+								PoderEspecial* poder = new Invocacion(nmascota,especie,habilidad,tipoMascota,nombrePoder,nivelPoder,4);
+								Persona* p = new FireBender(cicatrices,victorias,poder,nacion,nombre,sexo,edad,2);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+						}//end if agregar fire bender
+
+						if(tipo == 3){//Agregar water bender
+							cout << "Nombre Tribu: ";
+							cin >> tribu;
+							cout << "Tipo de arma: ";
+							cin >> arma;
+
+							cout << "nombre poder: ";
+							cin >> nombrePoder;
+							cout << "nivel poder: ";
+							cin >> nivelPoder;
+
+							cout << "Ingrese el tipo poder \n(1:Ofensivo, 2:Defensivo, 3:Curación, 4:Invocar Animal): ";
+							cin >> tipoPoder;
+
+							if(tipoPoder ==1){
+								cout << "Ingrese el rango: ";
+								cin >> oRango;
+								cout << "Ingrese la fuerza: ";
+								cin >> ofuerza;
+								//(string _nombre, int _nivel, int _tipo)
+								PoderEspecial* poder = new Ofensivo(oRango,ofuerza,nombrePoder,nivelPoder,1);
+								Persona* p = new WaterBender(tribu,arma,poder,nacion,nombre,sexo,edad,3);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+							if(tipoPoder == 2){
+								cout << "Resistencia: ";
+								cin >> resistencia;
+								cout << "duracion: ";
+								cin >> duracion;
+								PoderEspecial* poder = new Defensivo(resistencia,duracion,nombrePoder,nivelPoder,2);
+								Persona* p = new WaterBender(tribu,arma,poder,nacion,nombre,sexo,edad,3);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+
+							if(tipoPoder == 3){
+								cout << "Tipo de curacion: ";
+								cin >> curacion;
+								PoderEspecial* poder = new Curacion(curacion,nombrePoder,nivelPoder,3);
+								Persona* p = new WaterBender(tribu,arma,poder,nacion,nombre,sexo,edad,3);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+
+							if(tipoPoder == 4){
+								cout << "Nombre Mascota: ";
+								cin >> nmascota;
+								cout << "especie: ";
+								cin >> especie;
+								cout << "Habilidad: ";
+								cin >> habilidad;
+								cout << "Tipo Mascota: (guerra o doméstico)";
+								cin >> tipoMascota;
+								PoderEspecial* poder = new Invocacion(nmascota,especie,habilidad,tipoMascota,nombrePoder,nivelPoder,4);
+								Persona* p = new WaterBender(tribu,arma,poder,nacion,nombre,sexo,edad,3);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+						}//end if agregar water bender
+						
+
+					}//end else
+					
+				}//end case 1
 				break;
 				case 2://Listar
 				break;
