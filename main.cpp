@@ -366,29 +366,46 @@ int main(){
 				break;
 				case 2:{//Listar
 
-
+					cout << "\nWater Benders: ";
 					for(int i = 0; i < lista.size(); i++){
 						
-						if(typeid(WaterBender) == typeid(*lista.at(i))){
-							cout << lista.at(i)->toString() << endl;
-						}
-
-						if(typeid(FireBender) == typeid(*lista.at(i))){
-							cout << lista.at(i)->toString() << endl;
-						}
-
-						if(typeid(AirBender) == typeid(*lista.at(i))){
-							cout << lista.at(i)->toString() << endl;
-						}
-
-						if(typeid(EarthBender) == typeid(*lista.at(i))){
-							cout << lista.at(i)->toString() << endl;
-						}
-
-						if(typeid(NonBender) == typeid(*lista.at(i))){
-							cout << lista.at(i)->toString() << endl;
+						if(dynamic_cast<WaterBender*>(lista.at(i))){
+							cout <<"\t" << lista.at(i)->getNombre() << endl;
 						}
 					}
+
+					cout << "\nFire Benders: ";
+					for(int i = 0; i < lista.size(); i++){
+						
+						if(dynamic_cast<FireBender*>(lista.at(i))){
+							cout <<"\t" << lista.at(i)->getNombre() << endl;
+						}
+					}
+
+					cout << "\nEarth Benders: ";
+					for(int i = 0; i < lista.size(); i++){
+						
+						if(dynamic_cast<EarthBender*>(lista.at(i))){
+							cout <<"\t" << lista.at(i)->getNombre() << endl;
+						}
+					}
+
+					cout << "\nAir Benders: ";
+					for(int i = 0; i < lista.size(); i++){
+						
+						if(dynamic_cast<AirBender*>(lista.at(i))){
+							cout <<"\t" << lista.at(i)->getNombre() << endl;
+						}
+					}
+
+					cout << "\nNon Benders: ";
+					for(int i = 0; i < lista.size(); i++){
+						
+						if(dynamic_cast<NonBender*>(lista.at(i))){
+							cout <<"\t" << lista.at(i)->getNombre() << endl;
+						}
+					}
+					
 				}
 				break;
 				case 3://Eliminar
