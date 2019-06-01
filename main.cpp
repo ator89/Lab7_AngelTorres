@@ -18,7 +18,7 @@ using std::endl;
 #include <vector>
 using std::vector;
 
-#include <typeid>
+#include <typeinfo>
 
 void menu();
 
@@ -368,8 +368,26 @@ int main(){
 
 
 					for(int i = 0; i < lista.size(); i++){
-						cout << lista.at(i)->toString() << endl;
-						if(typeid)
+						
+						if(typeid(WaterBender) == typeid(*lista.at(i))){
+							cout << lista.at(i)->toString() << endl;
+						}
+
+						if(typeid(FireBender) == typeid(*lista.at(i))){
+							cout << lista.at(i)->toString() << endl;
+						}
+
+						if(typeid(AirBender) == typeid(*lista.at(i))){
+							cout << lista.at(i)->toString() << endl;
+						}
+
+						if(typeid(EarthBender) == typeid(*lista.at(i))){
+							cout << lista.at(i)->toString() << endl;
+						}
+
+						if(typeid(NonBender) == typeid(*lista.at(i))){
+							cout << lista.at(i)->toString() << endl;
+						}
 					}
 				}
 				break;
