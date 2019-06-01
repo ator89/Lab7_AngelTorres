@@ -8,6 +8,7 @@
 #include "Invocacion.h"
 #include "FireBender.h"
 #include "WaterBender.h"
+#include "EarthBender.h"
 
 #include <iostream>
 using std::cout;
@@ -68,6 +69,10 @@ int main(){
 					//variables water bender
 					string tribu;
 					string arma;
+
+					//variables earth bender
+					int coles;
+					int graduacion;
 
 					
 					//variables nonbender
@@ -289,6 +294,68 @@ int main(){
 								lista.push_back(p);
 							}
 						}//end if agregar water bender
+
+						if(tipo == 4){//Agregar eart bender
+							cout << "Numero coles: ";
+							cin >> coles;
+							cout << "Graduacion: ";
+							cin >> graduacion;
+
+							cout << "nombre poder: ";
+							cin >> nombrePoder;
+							cout << "nivel poder: ";
+							cin >> nivelPoder;
+
+							cout << "Ingrese el tipo poder \n(1:Ofensivo, 2:Defensivo, 3:Curación, 4:Invocar Animal): ";
+							cin >> tipoPoder;
+
+							if(tipoPoder ==1){
+								cout << "Ingrese el rango: ";
+								cin >> oRango;
+								cout << "Ingrese la fuerza: ";
+								cin >> ofuerza;
+								//(string _nombre, int _nivel, int _tipo)
+								PoderEspecial* poder = new Ofensivo(oRango,ofuerza,nombrePoder,nivelPoder,1);
+								Persona* p = new EarthBender(coles,graduacion,poder,nacion,nombre,sexo,edad,4);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+							if(tipoPoder == 2){
+								cout << "Resistencia: ";
+								cin >> resistencia;
+								cout << "duracion: ";
+								cin >> duracion;
+								PoderEspecial* poder = new Defensivo(resistencia,duracion,nombrePoder,nivelPoder,2);
+								Persona* p = new EarthBender(coles,graduacion,poder,nacion,nombre,sexo,edad,4);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+
+							if(tipoPoder == 3){
+								cout << "Tipo de curacion: ";
+								cin >> curacion;
+								PoderEspecial* poder = new Curacion(curacion,nombrePoder,nivelPoder,3);
+								Persona* p = new EarthBender(coles,graduacion,poder,nacion,nombre,sexo,edad,4);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+
+							if(tipoPoder == 4){
+								cout << "Nombre Mascota: ";
+								cin >> nmascota;
+								cout << "especie: ";
+								cin >> especie;
+								cout << "Habilidad: ";
+								cin >> habilidad;
+								cout << "Tipo Mascota: (guerra o doméstico)";
+								cin >> tipoMascota;
+								PoderEspecial* poder = new Invocacion(nmascota,especie,habilidad,tipoMascota,nombrePoder,nivelPoder,4);
+								Persona* p = new EarthBender(coles,graduacion,poder,nacion,nombre,sexo,edad,4);
+								cout << p->toString() <<" agregado con éxito\n";
+								lista.push_back(p);
+							}
+
+						}//end if agregar earth bender
 						
 
 					}//end else
